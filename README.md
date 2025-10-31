@@ -126,8 +126,6 @@ Once the pipeline has run, you can explore the database using the included Jupyt
 
 1.  In your terminal (with the `.dag` active), run:
     ```bash
-    jupyter notebook 
+    jupyter notebook MedallionDataExplorer.ipynb
     ```
-2.  Your browser will open the JupyterLab interface.
-3.  On the left-hand side, double-click `MedallionDataExplorer.ipynb`.
-4.  Run the cells in the notebook to see visualizations and analyses of the tables in your `medallion.db` file.
+    
