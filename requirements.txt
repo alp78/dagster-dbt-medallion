@@ -1,0 +1,12 @@
+dagster
+dagster-webserver
+dagster-dbt
+dbt-core
+dbt-sqlite
+pandas
+pyarrow
+notebook
+matplotlib
+seaborn
+boto3
+botocore

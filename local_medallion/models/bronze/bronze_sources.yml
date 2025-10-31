@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: main 
+    tables:
+      - name: bronze_item
+        description: Raw item data from S3.
+        meta:
+          dagster:
+            asset_key: ["bronze_item"]  # Links to Python asset
+        columns:
+          - name: id
+            description: Primary key for items.
+            tests:
+              - unique
+              - not_null
+
+      - name: bronze_event
+        description: Raw event data from S3.
+        meta:
+          dagster:
+            asset_key: ["bronze_event"]  # Links to Python asset
+        columns:
+          - name: event_id
+            description: Correlation key for events.
+            tests:
+              - not_null
