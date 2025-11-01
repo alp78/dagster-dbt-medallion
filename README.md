@@ -179,4 +179,11 @@ Once the pipeline has run, you can explore the database using the included Jupyt
     ```bash
     jupyter notebook MedallionDataExplorer.ipynb
     ```
-    
+
+### Notes
+
+- Dagster needs to run a daemon and a webserver, when running the pipeline with `dagster dev`, both are launched in the same terminal session, but you can also start them separately in two terminals with `dagster-webserver` and `dagster-daemon run`
+- In case you need to reset the project to a blank state
+    1. run the `dbt clean` command inside the dbt subfolder `local_medallion`
+    2. remove the `dagster_home` folder in project root and recreate it empty with `mkdir dagster_home`
+    3. regenerate the dagster `manifest.json` file with `dbt compile --project-dir local_medallion`
