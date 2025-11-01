@@ -4,24 +4,24 @@ sources:
   - name: main 
     tables:
       - name: bronze_item
-        description: Raw item data from S3.
+        description: raw item data from local source or S3
         meta:
           dagster:
             asset_key: ["bronze_item"]
         columns:
           - name: id
-            description: Primary key for items.
+            description: Primary key for items
             tests:
               - unique
               - not_null
 
       - name: bronze_event
-        description: Raw event data from S3.
+        description: raw event data from local source or S3
         meta:
           dagster:
             asset_key: ["bronze_event"]
         columns:
           - name: event_id
-            description: Correlation key for events.
+            description: Correlation key for events
             tests:
               - not_null
