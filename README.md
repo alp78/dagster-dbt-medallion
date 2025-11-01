@@ -56,6 +56,7 @@ The repository is structured with the Dagster components at the root and the dbt
 
 
 **External Configuration File**
+
 This file is required for dbt to run, but it lives outside your project folder.
 
     C:\Users\`<Username>`\.dbt\
