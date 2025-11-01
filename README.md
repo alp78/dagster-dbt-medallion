@@ -51,14 +51,14 @@ When you run the project in Dagster, the full dependency graph (DAG) will look l
 5.  **Optional but recommended - Set `DAGSTER_HOME` environment variable:**
 To avoid setting the variable every time you run the pipeline, you can set it as a global environment variable for your Windows user.
 
-1.  Press the **Windows key** and type "Edit the system environment variables."
-2.  Click the "**Environment Variables...**" button.
-3.  In the top box ("User variables"), click "**New...**".
-4.  Enter the following:
-    * **Variable name:** `DAGSTER_HOME`
-    * **Variable value:** `C:\path\to\your\dagster-dbt-medallion\dagster_home`
-5.  Click **OK** on all windows to save.
-6.  **Important:** You must **close and reopen** any open terminal windows for this change to take effect.
+    - Press the **Windows key** and type "Edit the system environment variables."
+    - Click the "**Environment Variables...**" button.
+    - In the top box ("User variables"), click "**New...**".
+    - Enter the following:
+        * **Variable name:** `DAGSTER_HOME`
+        * **Variable value:** `C:\path\to\your\dagster-dbt-medallion\dagster_home`
+    - Click **OK** on all windows to save.
+    - **Important:** You must **close and reopen** any open terminal windows for this change to take effect.
 
 
 ### 3. dbt Profile Setup
