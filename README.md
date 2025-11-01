@@ -27,7 +27,7 @@ The repository is structured with the Dagster components at the root and the dbt
     |-- requirements.txt               # <- Python dependencies
     |-- dag.jpg                        # <- DAG screenshot
     |
-    |-- sources/
+    |-- sources/                       # <- local data sources (can be switched with an S3 bucket)
     |   |-- event.csv
     |   |-- item.csv
     |
