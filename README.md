@@ -22,20 +22,7 @@ When you run the project in Dagster, the full dependency graph (DAG) will look l
 * **Python** (3.8 - 3.11)
 * **Git**
 
-### 2. Global Setup (Recommended)
-
-To avoid setting the `DAGSTER_HOME` variable every time you run the pipeline, you can set it as a global environment variable for your Windows user.
-
-1.  Press the **Windows key** and type "Edit the system environment variables."
-2.  In the window that appears, click the "**Environment Variables...**" button.
-3.  In the top box ("User variables"), click "**New...**".
-4.  Enter the following:
-    * **Variable name:** `DAGSTER_HOME`
-    * **Variable value:** `C:\path\to\your\dagster-dbt-medallion\dagster_home` (e.g., `C:\Users\alex\DEV_PY\DBT\dagster_home`)
-5.  Click **OK** on all windows to save.
-6.  **Important:** You must **close and reopen** any open terminal windows for this change to take effect.
-
-### 3. Project Setup
+### 2. Project Setup
 
 1.  **Clone the Repository:**
     ```bash
@@ -52,10 +39,29 @@ To avoid setting the `DAGSTER_HOME` variable every time you run the pipeline, yo
 
 3.  **Install Dependencies:**
     ```bash
+    python -m pip install --upgrade pip
     pip install -r requirements.txt
     ```
 
-### 4. dbt Profile Setup
+4.  **Create Dagster Home Folder:**
+    ```bash
+    mkdir dagster_home
+    ```
+
+5.  **Optional but recommended - Set `DAGSTER_HOME` environment variable:**
+To avoid setting the variable every time you run the pipeline, you can set it as a global environment variable for your Windows user.
+
+1.  Press the **Windows key** and type "Edit the system environment variables."
+2.  Click the "**Environment Variables...**" button.
+3.  In the top box ("User variables"), click "**New...**".
+4.  Enter the following:
+    * **Variable name:** `DAGSTER_HOME`
+    * **Variable value:** `C:\path\to\your\dagster-dbt-medallion\dagster_home`
+5.  Click **OK** on all windows to save.
+6.  **Important:** You must **close and reopen** any open terminal windows for this change to take effect.
+
+
+### 3. dbt Profile Setup
 
 This project requires a `profiles.yml` file to be present in your user's `.dbt` folder.
 
@@ -78,7 +84,7 @@ This project requires a `profiles.yml` file to be present in your user's `.dbt` 
             main: '../medallion.db' # Path to the DB file
     ```
 
-### 5. Run the Pipeline
+### 4. Run the Pipeline
 
 1.  **Compile dbt:**
     This generates the `manifest.json` file that Dagster needs to read. (You only need to do this once, or after changing your dbt models).
@@ -86,13 +92,7 @@ This project requires a `profiles.yml` file to be present in your user's `.dbt` 
     dbt compile --project-dir local_medallion
     ```
 
-2.  **Create Dagster Home Folder:**
-    (If you did not set the global environment variable, this folder must be created in the location you will point to).
-    ```bash
-    mkdir dagster_home
-    ```
-
-3.  **Run Terminal 1 (Webserver):**
+2.  **Run Terminal:**
     Open a terminal, activate your virtual environment, and run:
     ```powershell
     # If you did *not* set the global variable, run this line first:
@@ -102,7 +102,7 @@ This project requires a `profiles.yml` file to be present in your user's `.dbt` 
     dagster dev
     ```
 
-4.  Open `http://127.0.0.1:3000` in your browser, go to Overview, click on **"Materialize an asset"** and then **"Materialize all"**. The pipeline will run, creating the `medallion.db` file.
+3.  Open `http://127.0.0.1:3000` in your browser, go to Overview, click on **"Materialize an asset"** and then **"Materialize all"**. The pipeline will run, creating the `medallion.db` file.
 
 ---
 
