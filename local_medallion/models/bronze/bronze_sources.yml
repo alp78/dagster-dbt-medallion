@@ -7,7 +7,7 @@ sources:
         description: Raw item data from S3.
         meta:
           dagster:
-            asset_key: ["bronze_item"]  # Links to Python asset
+            asset_key: ["bronze_item"]
         columns:
           - name: id
             description: Primary key for items.
@@ -19,7 +19,7 @@ sources:
         description: Raw event data from S3.
         meta:
           dagster:
-            asset_key: ["bronze_event"]  # Links to Python asset
+            asset_key: ["bronze_event"]
         columns:
           - name: event_id
             description: Correlation key for events.

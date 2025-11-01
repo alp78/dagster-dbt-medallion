@@ -10,5 +10,5 @@ SELECT
     STRFTIME('%Y-%m-%d %H:%M:%S', created_at) AS created_at_ts
 
 FROM
-    -- Reads from models/bronze/bronze_sources.yml
+    -- reads from models/bronze/bronze_sources.yml
     {{ source('main', 'bronze_item') }}

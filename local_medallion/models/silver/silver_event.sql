@@ -11,7 +11,7 @@ SELECT
     CAST(STRFTIME('%Y', event_time) AS INTEGER) AS event_year
 
 FROM
-    -- Reads from models/bronze/bronze_sources.yml
+    -- reads from models/bronze/bronze_sources.yml
     {{ source('main', 'bronze_event') }}
 WHERE
     event_time IS NOT NULL
