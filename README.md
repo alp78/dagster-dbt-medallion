@@ -50,7 +50,7 @@ The repository is structured with the Dagster components at the root and the dbt
     |       |-- ... (other files)
     |
     |-- (Generated & Ignored by git)
-    |-- .dag/                         # <- Python virtual environment
+    |-- .dag/                          # <- Python virtual environment
     |-- dagster_home/                  # <- Dagster instance storage (runs, logs)
     |-- medallion.db                   # <- SQLite database
 
