@@ -186,4 +186,5 @@ Once the pipeline has run, you can explore the database using the included Jupyt
 - In case you need to reset the project to a blank state
     1. run the `dbt clean` command inside the dbt subfolder `local_medallion`
     2. remove the `dagster_home` folder in project root and recreate it empty with `mkdir dagster_home`
-    3. regenerate the dagster `manifest.json` file with `dbt compile --project-dir local_medallion`
+    3. remove the databse with `rm medallion.db`
+    4. regenerate the dagster `manifest.json` file with `dbt compile --project-dir local_medallion`
