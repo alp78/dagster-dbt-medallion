@@ -63,7 +63,7 @@ final_datamart AS (
         tv.event_year,
         tv.total_views,
         tp.most_used_platform,
-        -- Replicate the final window function
+        -- replicate the final window function
         RANK() OVER (
             PARTITION BY tv.event_year
             ORDER BY tv.total_views DESC
@@ -75,7 +75,7 @@ final_datamart AS (
         ON tv.item_id = tp.item_id AND tv.event_year = tp.event_year
 )
 
--- Final join to add item names
+-- final join to add item names
 SELECT
     dm.item_id,
     si.item_name,
