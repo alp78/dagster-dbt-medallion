@@ -49,6 +49,7 @@ When you run the project in Dagster, the full dependency graph (DAG) will look l
     ```
 
 5.  **Optional but recommended - Set `DAGSTER_HOME` environment variable:**
+
 To avoid setting the variable every time you run the pipeline, you can set it as a global environment variable for your Windows user.
 
     - Press the **Windows key** and type "Edit the system environment variables."
